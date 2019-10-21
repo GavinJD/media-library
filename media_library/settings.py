@@ -21,6 +21,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # Local
     'users.apps.UsersConfig',
+    'movies.apps.MoviesConfig',
+
     # Default
     'django.contrib.admin',
     'django.contrib.auth',
@@ -102,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
@@ -115,3 +117,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Media files (Metadata, ??)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
