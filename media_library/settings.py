@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     # Local
     'users.apps.UsersConfig',
     'movies.apps.MoviesConfig',
+    'tvseries.apps.TvseriesConfig',
 
     # Default
     'django.contrib.admin',

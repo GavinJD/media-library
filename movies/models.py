@@ -23,7 +23,11 @@ class Movie(models.Model):
         return self.name
 
 class MovieMetadata(models.Model):
-    media_id = models.OneToOneField('Movie', on_delete=models.CASCADE)
+    media = models.OneToOneField(
+        'Movie',
+        on_delete=models.CASCADE,
+        primary_key=True
+    )
     director = models.CharField(max_length=50)
     poster = models.URLField()
     year = models.IntegerField(
@@ -46,7 +50,7 @@ class MovieMetadata(models.Model):
 
 class Genre(models.Model):
     genre_id = models.IntegerField(primary_key=True)
-    genre = models.CharField(max_length=20)
+    genre = models.CharField(max_length=40)
 
     class Meta:
         verbose_name = "Movie Genre"
@@ -64,5 +68,5 @@ class MovieGenre(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['media', 'genre'], name='No repeating genres')
+            models.UniqueConstraint(fields=['media', 'genre'], name='No repeating movie genres')
         ]

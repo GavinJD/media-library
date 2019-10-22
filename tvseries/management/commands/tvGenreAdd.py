@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from movies.models import Genre
+from tvseries.models import Genre
 
 tv_genre = {}
 tv_genre[10759] = "Action & Adventure"
