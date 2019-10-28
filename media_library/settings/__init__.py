@@ -1,17 +1,16 @@
 import os
+import sys
+try:
+    from .local_settings import *
+except ImportError:
+    raise Exception('No local_settings.py file found')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '8vk8_r(n_gp#sjdplpd4o!13(mq@buz%_l6vhz#bc^l7$c#0(@'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -23,6 +22,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'movies.apps.MoviesConfig',
     'tvseries.apps.TvseriesConfig',
+    'pages.apps.PagesConfig',
 
     # Default
     'django.contrib.admin',
@@ -48,7 +48,7 @@ ROOT_URLCONF = 'media_library.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,20 +63,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'media_library.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'media_library',
-        'USER': 'media_admin',
-        'PASSWORD': 'mediapassword',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
 
 # Change User from Default to Custom User
 AUTH_USER_MODEL = 'users.User'
@@ -118,9 +104,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
 
 
 # Media files (Metadata, ??)
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -1,0 +1,27 @@
+'''
+LOCAL SETTINGS SAMPLE
+
+Before running, copy this file as "local_settings.py" and change the fields to valid entries
+
+'''
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '#'
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '#',
+        'USER': '#',
+        'PASSWORD': '#',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
