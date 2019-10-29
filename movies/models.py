@@ -45,7 +45,7 @@ class MovieMetadata(models.Model):
         verbose_name_plural = "Movie Metadata"
 
     def __str__(self):
-        return f'{Movie.objects.get(media_id=self.media_id_id).name} metadata'
+        return f'{Movie.objects.get(media_id=self.media_id).name} metadata'
         
 
 class Genre(models.Model):
