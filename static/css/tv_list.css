@@ -1,0 +1,112 @@
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    background:linear-gradient(to bottom, #070400, #2c1a00, #512800, #7e3000, #b2300f, #b7261e, #bb1a2b, #be0c38, #8d1333, #5e1528, #31111a, #000000);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*navbar*/
+.navbar
+{
+	padding-top: 13px;
+	min-height: 75px;
+}
+.navbar-inverse{
+	background:rgb(0,0,0,1);
+	height:5%;
+	border:none; 
+
+}
+.navbar-inverse .navbar-nav>li>a{
+	font-size: 18px;
+	color: white;
+}
+.navbar-inverse .navbar-brand
+{
+	font-size: 20px;
+	color: white;
+}
+/*buttons*/
+.btn-lg
+{
+	    text-align: center;
+		border-radius:20px;
+		margin-top: 18%;
+		border: none;
+		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+		color: white;
+		background-color:#CD0721;
+
+}
+#movies{
+	margin-left: 85%;
+  	font-size: 16px;
+  	
+  	padding-left: 25px;
+  	padding-right: 25px;
+  	color: black;
+	background-color: #fff;
+}
+#series
+{
+	margin-right: 85%;
+   	font-size: 16px;
+  	
+}
+/*Cards*/
+
+#content
+{
+	margin-top: 3%;
+}
+.pageno
+{
+	text-align: center;
+}
+
+.thumbnail
+{
+	background:rgb(0,0,0,0.4);
+	border:none;
+	
+	
+}
+
+/* .thumbnail img
+{
+	width: 250px;
+	height: 250px;
+} */
+#cardbtn
+{
+	text-align:center;
+}
+#cardbtn .btn-primary
+{
+	background-color:#CD0721
+	border:none;
+	border-radius: 20px;
+
+}
+
+#cardbtn .btn-default
+{
+	border-radius: 20px;
+}
+h4
+{
+	
+	color: white;
+	text-align: center;
+}
+.pagination>li>a
+{
+	background: black;
+}

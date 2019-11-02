@@ -12,7 +12,6 @@ class TVShow(models.Model):
                 regex='^TV(\w{8})$', message='media_id for TV season must follow TV[8 digit ID]', code='nomatch')
         ]
     )
-    urlPath = models.URLField()
 
     class Meta:
         verbose_name = "TV Show"
@@ -44,17 +43,14 @@ class TVSeason(models.Model):
 class TVEpisode(models.Model):
     season = models.ForeignKey('TVSeason', on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
-    filename = models.CharField(max_length=100)
-    number = models.PositiveSmallIntegerField()
-    description = models.TextField(default='Default TV Episode Description')
-    rating = models.DecimalField(max_digits=2, decimal_places=1)
+    urlPath = models.URLField()
 
     class Meta:
         verbose_name = "TV Episode"
         verbose_name_plural = "TV Episodes"
         constraints = [
             models.UniqueConstraint(
-                fields=['season', 'number'],
+                fields=['season', 'name'],
                 name='No repeating tv season episodes'
             )
         ]
@@ -109,3 +105,8 @@ class TVGenre(models.Model):
             models.UniqueConstraint(
                 fields=['media', 'genre'], name='No repeating tv genres')
         ]
+
+class TVPlayHistory(models.Model):
+    user = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    media = models.ForeignKey('TVShow', on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now=True)

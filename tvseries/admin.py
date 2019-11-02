@@ -5,7 +5,8 @@ from .models import(
     TVEpisode,
     TVMetadata,
     Genre,
-    TVGenre
+    TVGenre,
+    TVPlayHistory
 )
 
 
@@ -40,3 +41,4 @@ class TVShowAdmin(admin.ModelAdmin):
 admin.site.register(TVSeason, TVSeasonAdmin)
 admin.site.register(TVShow, TVShowAdmin)
 admin.site.register(Genre)
+admin.site.register(TVPlayHistory)

@@ -1,3 +1,5 @@
 medialib.code-workspace
 __pycache__/
 local_settings.py
+.unmigrated_templates
+migrations/

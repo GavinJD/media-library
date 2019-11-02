@@ -3,7 +3,8 @@ from .models import (
     Movie,
     MovieMetadata,
     MovieGenre,
-    Genre
+    Genre,
+    PlayHistory
 )
 
 class MovieGenreInline(admin.StackedInline):
@@ -21,5 +22,6 @@ class MovieAdmin(admin.ModelAdmin):
     ]
 
 
+admin.site.register(PlayHistory)
 admin.site.register(Genre)
 admin.site.register(Movie, MovieAdmin)

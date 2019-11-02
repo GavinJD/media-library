@@ -1,0 +1,42 @@
+body
+{
+	text-align: center;
+	height: 100%;
+    margin: 0;
+    background:linear-gradient(to bottom, #070400, #2c1a00, #512800, #7e3000, #b2300f, #b7261e, #bb1a2b, #be0c38, #8d1333, #5e1528, #31111a, #000000);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.navbar
+{
+	padding-top: 13px;
+	min-height: 75px;
+}
+.navbar-inverse{
+	background:rgb(0,0,0,1);
+	height:5%;
+	border:none;
+}
+.navbar-inverse .navbar-nav>li>a{
+	font-size: 18px;
+	color: white;
+}
+.navbar-inverse .navbar-brand
+{
+	font-size: 20px;
+	color: white;
+}
+
+.jumbotron
+{
+	
+	background:rgb(0,0,0,0.4);
+	color: white;
+
+}
+video
+{
+	width: 90%;
+	margin-top: 100px;
+}

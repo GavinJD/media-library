@@ -1,0 +1,65 @@
+html
+{
+	height: 100%;
+}
+body
+{
+	
+	height: 100%;
+    margin: 0;
+    background:linear-gradient(to bottom, #070400, #2c1a00, #512800, #7e3000, #b2300f, #b7261e, #bb1a2b, #be0c38, #8d1333, #5e1528, #31111a, #000000);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	
+}
+/*navbar*/
+.navbar
+{
+	padding-top: 13px;
+	min-height: 75px;
+}
+.navbar-inverse{
+	background:rgb(0,0,0,1);
+	height:5%;
+	border:none;
+}
+.navbar-inverse .navbar-nav>li>a{
+	font-size: 18px;
+	color: white;
+}
+.navbar-inverse .navbar-brand
+{
+	font-size: 20px;
+	color: white;
+}
+/*cards*/
+.thumbnail
+{
+	background:rgb(0,0,0,0.0);
+	border:none;
+}
+
+/*jumbotron*/
+.jumbotron
+{
+	margin-top: 20px;
+	background:rgb(0,0,0,0.4);
+	color: white;
+
+}
+
+.jumbotron .btn-sm
+{
+	    text-align: center;
+		border-radius:20px;
+		border: none;
+		text-align: center;
+  		text-decoration: none;
+  		display: inline-block;
+		color: white;
+		background-color: #CD0721;
+		width: 100%;
+		margin-bottom: 5px;
+}
+
+

@@ -13,7 +13,7 @@ class Movie(models.Model):
                 regex='^MV(\w{8})$', message='media_id for movie must follow MV[8 digit ID]', code='nomatch')
         ]
     )
-    urlPath = models.URLField()
+    urlPath = models.URLField(null=True)
 
     class Meta:
         verbose_name = "Movie"
@@ -21,6 +21,7 @@ class Movie(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class MovieMetadata(models.Model):
     media = models.OneToOneField(
@@ -46,7 +47,7 @@ class MovieMetadata(models.Model):
 
     def __str__(self):
         return f'{Movie.objects.get(media_id=self.media_id).name} metadata'
-        
+
 
 class Genre(models.Model):
     genre_id = models.IntegerField(primary_key=True)
@@ -55,9 +56,10 @@ class Genre(models.Model):
     class Meta:
         verbose_name = "Movie Genre"
         verbose_name_plural = "Movie Genres"
-    
+
     def __str__(self):
         return self.genre
+
 
 class MovieGenre(models.Model):
     media = models.ForeignKey('Movie', on_delete=models.CASCADE)
@@ -68,5 +70,12 @@ class MovieGenre(models.Model):
 
     class Meta:
         constraints = [
-            models.UniqueConstraint(fields=['media', 'genre'], name='No repeating movie genres')
+            models.UniqueConstraint(
+                fields=['media', 'genre'], name='No repeating movie genres')
         ]
+
+
+class PlayHistory(models.Model):
+    user = models.ForeignKey('users.User', on_delete=models.CASCADE)
+    media = models.ForeignKey('Movie', on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(auto_now=True)

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block content %}
+
+<div class="jumbotron container bg-success">
+    <h1 class="display-4 text-white">The Media Library</h1>
+    <p class="lead text-black">A place to do stuff</p>
+</div>
+
+{% endblock content %}

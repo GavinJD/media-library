@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sign up</title>
+  <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/static/css/signup.css">
+
+  <script src="https://kit.fontawesome.com/7fa4b450dd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="tint">
+    <form method="post">
+      {% csrf_token %}
+      <div class="login-box">
+
+        <h1>Register</h1>
+        <div class="textbox">
+          <i class="fas fa-user"></i>
+          <input type="text" id="id_username" maxlength="150" placeholder="Username" name="username" value="" required>
+        </div>
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input id="id_password1" type="password" placeholder="Password" name="password1" pattern="(?=.*[a-z]).{8,}"
+            title="Must contain atleast one number, and atleast 8 or more characters" value="" required>
+        </div>
+        <div class="textbox">
+          <i class="fas fa-lock"></i>
+          <input id="id_password2" type="password" placeholder="Repeat password" name="password2" value="" required>
+        </div>
+        <button class="btn" type="submit" name="sign_in" value="Register">Sign Up</button>
+
+      </div>
+    </form>
+
+  </div>
+  <!------------------------------------------------------JS---------------------------------------------->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
