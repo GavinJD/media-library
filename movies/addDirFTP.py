@@ -14,7 +14,7 @@ def getMovieList(connection, folder):
             resultList.append(f[0])
         elif f[1]['type'] == 'dir':
             fList = getMovieList(connection, f[0])
-            resultList += [(f'{f[0]}/' + x) for x in fList]
+            resultList += [(f'{f[0]}/{x}') for x in fList]
     connection.cwd('..')
     return resultList
 

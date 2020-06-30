@@ -10,7 +10,7 @@ class Movie(models.Model):
         primary_key=True,
         validators=[
             RegexValidator(
-                regex='^MV(\w{8})$', message='media_id for movie must follow MV[8 digit ID]', code='nomatch')
+                regex=r'^MV(\w{8})$', message='media_id for movie must follow MV[8 digit ID]', code='nomatch')
         ]
     )
     urlPath = models.URLField(null=True)

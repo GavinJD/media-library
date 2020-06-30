@@ -9,7 +9,7 @@ class TVShow(models.Model):
         primary_key=True,
         validators=[
             RegexValidator(
-                regex='^TV(\w{8})$', message='media_id for TV season must follow TV[8 digit ID]', code='nomatch')
+                regex=r'^TV(\w{8})$', message='media_id for TV season must follow TV[8 digit ID]', code='nomatch')
         ]
     )
 
