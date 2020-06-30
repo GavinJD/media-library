@@ -1,5 +1,12 @@
 medialib.code-workspace
+.vscode/
+
 __pycache__/
 local_settings.py
 .unmigrated_templates
 migrations/
+.python-version
+db.sqlite3
+requirements.txt
+
+.envrc
